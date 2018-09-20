@@ -215,8 +215,16 @@ export class ReportSummaryUtils {
                     stackLicense.infoValue = stackLicenses[0];
                 } else {
                     stackLicense.infoValue = 'None';
+                    stackLicense.config = {
+                        // tooltip: licenseAnalysis.reason
+                        tooltip: 'tooltip' // dummy text untill api result is changed
+                    };
                     if (licenseAnalysis.status && licenseAnalysis.status.toLowerCase() === 'failure') {
                         stackLicense.infoValue = 'Unknown';
+                        stackLicense.config = {
+                            // tooltip: licenseAnalysis.reason
+                            tooltip: 'tooltip' // dummy text untill api result is changed
+                        };
                     }
                 }
             } else {
